@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Header from './components/Header';
+import Hooks from './components/Hooks';
+import { AppContextProvider } from './context/context';
+
+
+
+export interface AppData {
+  "userName": string,
+  "companyName": string
+}
+
+
 
 function App() {
+
+  const [AppData] = useState<AppData>({
+    userName: "Devl",
+    companyName: "Enate"
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppContextProvider value={AppData}>
+        <Header companyName="My Company" members={20} />
+      </AppContextProvider>
+      <Hooks />
     </div>
   );
 }
