@@ -20,6 +20,7 @@ function App() {
     companyName: "Enate"
   })
 
+  
   return (
     <div className="App">
       <AppContextProvider value={AppData}>
