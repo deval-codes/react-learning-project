@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import './App.css';
+import Body from './components/Body';
 import Header from './components/Header';
-import Hooks from './components/Hooks';
-import { AppContextProvider } from './context/context';
-
 
 
 export interface AppData {
@@ -15,18 +12,17 @@ export interface AppData {
 
 function App() {
 
-  const [AppData] = useState<AppData>({
-    userName: "Devl",
-    companyName: "Enate"
-  })
+
 
   
   return (
     <div className="App">
-      <AppContextProvider value={AppData}>
-        <Header companyName="My Company" members={20} />
-      </AppContextProvider>
-      <Hooks />
+        <Header  companyName="My Company" members={20} />
+
+        <Body />
+       
+   
+      {/* <Hooks /> */}
     </div>
   );
 }

@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+.header{
+    background-color: black;
+    height: 40px;
+    width: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.body{
+    display: flex;             /* Enable flexbox */
+    flex-wrap: wrap;           /* Allow child divs to wrap */
+    width: 100%;               /* Take up full width of parent */
+    gap: 10px; 
+    margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.App{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    
+}
+
+.formBox{
+    flex: 1 1 48%;             /* Take up 50% of the parent's width */
+    min-width: 250px;          /* Optional, set a minimum width */
+    box-sizing: border-box;    /* Prevent padding/margin from affecting width */
+    padding: 20px;    
+    flex-wrap: wrap;         /* Padding for child divs */
+    text-align: center;        /* Center content */
+    border-radius: 5px; 
+    height: auto;
+}
+
+
+
+.formResult{
+    height: 100%;
+    width: 90%;  /* You can set the width you want for the second box */
+    margin: 0 auto;  /* Center the second box horizontally */
+    display: 'flex';
+    justify-content: 'center';
+    align-items: 'center';
+    height: '100vh';
+    width: '100%';
+}
+
+.inputArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+@media (max-width: 720px) {
+    .formBox {
+        flex-wrap: wrap;         /* Allow the children to wrap */
+      }
+    
+      .formResult {
+        flex: 1 1 100%;          /* Each child takes up 100% of the parent's width */
+      }
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
